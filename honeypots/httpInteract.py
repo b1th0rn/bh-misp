@@ -22,7 +22,7 @@ class RequestLoggerHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write("{}".format(content))
+            self.wfile.write(content)
             return
         elif self.path == "/robots.txt": # Respond with robots.txt
             self.send_response(200)
