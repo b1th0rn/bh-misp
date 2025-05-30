@@ -231,7 +231,7 @@
             <p>Accedi al tuo account per continuare</p>
         </div>
 
-        <form method="POST" action="/admin/login">
+        <form id="loginForm">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required placeholder="inserisci la tua email">
@@ -262,7 +262,7 @@
             <p>Non hai un account? <a href="#" onclick="showAlert('Funzione registrazione')">Registrati qui</a></p>
         </div>
     </div>
-
+    
     <script>
         // Gestione del form
         document.getElementById('loginForm').addEventListener('submit', function(e) {
@@ -278,24 +278,53 @@
                 return;
             }
             
-            // Simulazione login
+            // Mostra stato di caricamento
             const button = document.querySelector('.login-btn');
             button.textContent = 'Accesso in corso...';
             button.disabled = true;
             
-            setTimeout(() => {
+            // Prepara i dati per il POST
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('password', password);
+            if (remember) {
+                formData.append('remember', 'on');
+            }
+            
+            // Chiamata POST a /admin/login
+            fetch('/admin/login', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Errore nella risposta del server');
+                }
+            })
+            .then(data => {
                 // Reset del pulsante
                 button.textContent = 'Accedi';
                 button.disabled = false;
                 
-                // Simulazione risposta
-                if (email === 'demo@example.com' && password === 'demo123') {
-                    showAlert('Login effettuato con successo!', 'success');
-                    // Qui normalmente reindirizzeresti l'utente
+                // Se la risposta contiene HTML, sostituisci la pagina
+                if (data.includes('<html') || data.includes('<!DOCTYPE')) {
+                    document.open();
+                    document.write(data);
+                    document.close();
                 } else {
-                    showAlert('Credenziali non valide. Prova con: demo@example.com / demo123', 'error');
+                    showAlert('Login effettuato con successo!', 'success');
                 }
-            }, 1500);
+            })
+            .catch(error => {
+                // Reset del pulsante
+                button.textContent = 'Accedi';
+                button.disabled = false;
+                
+                console.error('Errore:', error);
+                showAlert('Errore di connessione al server', 'error');
+            });
         });
         
         // Funzione per mostrare alert personalizzati
