@@ -17,12 +17,12 @@ class RequestLoggerHandler(BaseHTTPRequestHandler):
         self.log_request_to_file()
 
         if self.path == "/admin": # Respond with Admin Page
-            with open("template_login.html", "rb") as f:
+            with open("template_login.html", "rb", encoding="utf-8") as f:
                 content = f.read()
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write("{}".format(content).encode('utf-8'))
+            self.wfile.write("{}".format(content))
             return
         elif self.path == "/robots.txt": # Respond with robots.txt
             self.send_response(200)
