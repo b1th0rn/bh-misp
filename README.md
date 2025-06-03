@@ -1,1 +1,12 @@
 # bh-misp
+The BH-MISP project tries to find useful tasks to automate in a threat intelligence process and build connections between the MISP platform and other tools. The project was started as an integration for eg0n, another community project, but it can be developed and used on its own without the eg0n integration.
+
+The main owner of the project is Rocco \[sheliak\] Sicilia, who works on it together with members of the BitHorn community. To join the community as a threat intelligence analyst, security specialist, or coder, the best way is to join the Discord channel on [Sheliak's server](URLhttps://discord.gg/Ys5AAbsyyH): \#misp-project.
+
+# main component
+
+## honeypots
+...
+
+## ioc_access
+A simple set of scripts to work with the MISP API to access and export IoCs.
