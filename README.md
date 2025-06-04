@@ -8,9 +8,9 @@ The main owner of the project is [Rocco \[sheliak\] Sicilia](https://roccosicili
 ## MISP istance
 The BitHorn community maintainers have set up a MISP instance for research purposes. Community researchers and external contributors can use the instance to share, review, or store threat intelligence data. This section of the file outlines the guidelines for collaborating with the project.
 
-** add New Event** - Create a new event if you want to share information about your analysis or other threat intelligence related to a specific incident.
+**add New Event** - Create a new event if you want to share information about your analysis or other threat intelligence related to a specific incident.
 
-** aggregated Event ** - Some events are aggregates of objects and attributes from the same category. For example, we have created an event to collect and share all IP addresses identified as scanners.
+**aggregated Event** - Some events are aggregates of objects and attributes from the same category. For example, we have created an event to collect and share all IP addresses identified as scanners.
 Use these events to update the collections regularly, ensuring that relevant threat intelligence is centralized and easily accessible. This helps maintain consistency and improves the efficiency of detection, analysis, and response activities across different teams or organizations.
 
 ## honeypots
