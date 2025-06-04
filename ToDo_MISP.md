@@ -3,8 +3,8 @@
 ## Core Configuration
 
 - Enrichment
-    - Enable the feature
-    - Write a user guide
+        Enable the feature
+        Write a user guide
 
 - TAXII
 
