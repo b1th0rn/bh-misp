@@ -2,11 +2,10 @@
 
 ## Core Configuration
 
+- TAXII server
 - Enrichment
     - Enable the feature
     - Write a user guide
-
-- TAXII
 
 ## Integration
 
