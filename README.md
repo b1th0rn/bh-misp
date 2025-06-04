@@ -5,6 +5,9 @@ The main owner of the project is [Rocco \[sheliak\] Sicilia](https://roccosicili
 
 # main components
 
+## MISP istance
+The BitHorn community maintainers have set up a MISP instance for research purposes. Community researchers and external contributors can use the instance to share, review, or store threat intelligence data. This section of the file outlines the guidelines for collaborating with the project.
+
 ## honeypots
 ...
 
