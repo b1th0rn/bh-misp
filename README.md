@@ -3,7 +3,7 @@ The BH-MISP project tries to find useful tasks to automate in a threat intellige
 
 The main owner of the project is [Rocco \[sheliak\] Sicilia](https://roccosicilia.com), who works on it together with members of the BitHorn community. To join the community as a threat intelligence analyst, security specialist, or coder, the best way is to join the Discord channel on [Sheliak's server](https://discord.gg/Ys5AAbsyyH): \#misp-project.
 
-# main component
+# main components
 
 ## honeypots
 ...
